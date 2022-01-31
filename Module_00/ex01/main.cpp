@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dmorty <dmorty@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/27 20:20:38 by dmorty            #+#    #+#             */
+/*   Updated: 2022/01/27 23:34:35 by dmorty           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
@@ -16,7 +27,7 @@ void search_contact(PhoneBook one)
 	one.contact[i - 1].get();
 }
 
-int	main(int argc, char **argv)
+int	main()
 {
 	PhoneBook	one;
 	int			i;
@@ -26,7 +37,9 @@ int	main(int argc, char **argv)
 	while (1)
 	{
 		std::cout << "Please enter your command: ";
-		std::cin >> cmd;
+		std::getline(std::cin, cmd);
+		if (cmd.empty())
+			break ;
 		if (!cmd.compare("ADD"))
 		{
 			one.contact[i].add_contact();
@@ -36,9 +49,7 @@ int	main(int argc, char **argv)
 			search_contact(one);
 		else if (!cmd.compare("EXIT"))
 			break ;
-		else
-			continue ;
-		if (i == 9)
-			i = 8;
+		if (i == 8)
+			i = 0;
 	}
 }

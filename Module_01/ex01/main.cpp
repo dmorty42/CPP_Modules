@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmorty <dmorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:33 by dmorty            #+#    #+#             */
-/*   Updated: 2022/01/27 20:20:36 by dmorty           ###   ########.fr       */
+/*   Created: 2022/01/28 00:44:32 by dmorty            #+#    #+#             */
+/*   Updated: 2022/01/28 00:52:42 by dmorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string>
+int main()
+{
+	Zombie* horde = zombieHorde(5, "Heap of meat");
 
-class Contact {
-	public:
-			std::string	first_name;
-			std::string	last_name;
-			std::string	nick_name;
-			std::string	number;
-			std::string	secret;
-			void	add_contact();
-			void	get();
-};
-
-#endif
+	for (int i = 0; i < 5; i++)
+		horde[i].announce();
+	delete[] (horde);
+}

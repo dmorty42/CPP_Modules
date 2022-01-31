@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmorty <dmorty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 20:20:33 by dmorty            #+#    #+#             */
-/*   Updated: 2022/01/27 20:20:36 by dmorty           ###   ########.fr       */
+/*   Created: 2022/01/28 01:38:30 by dmorty            #+#    #+#             */
+/*   Updated: 2022/01/28 03:45:37 by dmorty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Weapon.hpp"
 
-# include <iostream>
-# include <string>
+Weapon::Weapon() {
+} 
 
-class Contact {
-	public:
-			std::string	first_name;
-			std::string	last_name;
-			std::string	nick_name;
-			std::string	number;
-			std::string	secret;
-			void	add_contact();
-			void	get();
-};
+Weapon::Weapon(std::string type) 
+{
+	this->type = type;
+}
 
-#endif
+Weapon::~Weapon() {
+	std::cout << "\x1b[36m" << this->type
+		<< " is broken" << "\x1b[39;49m" 
+		<< std::endl;
+}
+
+const	std::string& Weapon::getType(void) const
+{
+	return (this->type);
+}
+
+void	Weapon::setType(std::string type)
+{
+	this->type = type;
+}
