@@ -2,13 +2,14 @@
 // Created by Darkside Morty on 2/1/22.
 //
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
-    ClapTrap a("Henry");
-    ClapTrap b;
+    ScavTrap a;
+    ScavTrap b("Marry");
+    ScavTrap c(b);
 
-    a.attack("Marry");
-    b.takeDamage(10);
-    b.beRepaired(3);
+    a.attack("Michael");
+    b.guardGate();
+    c.takeDamage(10);
 }

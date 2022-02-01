@@ -4,13 +4,17 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name(name), hp(10), mp(10), damage(0){
+ClapTrap::ClapTrap() : name("noname"), hp(10), mp(10), damage(0){
     std::cout << "ClapTrap default constructor called!"
               << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &a) {
-    *this = a;
+ClapTrap::ClapTrap(std::string name) : name(name), hp(10), mp(10), damage(0){
+    std::cout << "ClapTrap constructor called with parameter Name!"
+              << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &a) : name(a.name), hp(a.hp), mp(a.mp), damage(a.damage) {
     std::cout << "ClapTrap copy constructor called!"
         << std::endl;
 }

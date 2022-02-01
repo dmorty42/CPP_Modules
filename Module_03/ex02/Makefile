@@ -12,13 +12,15 @@
 
 .PHONY: all clean fclean re
 
-NAME = scav
+NAME = frag
 
 SRCS =	main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp
+		ScavTrap.cpp \
+		FragTrap.cpp
 HDRS =	ClapTrap.hpp \
-		ScavTrap.hpp
+		ScavTrap.hpp \
+		FragTrap.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic

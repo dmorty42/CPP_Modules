@@ -15,6 +15,7 @@ private:
         int mp;
         int damage;
 public:
+        ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &a);
         ClapTrap &operator=(const ClapTrap &a);
