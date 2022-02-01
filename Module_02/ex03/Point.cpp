@@ -7,9 +7,7 @@
 Point::Point(void) : x(), y() {
 }
 
-Point::Point(const float x, const float y) {
-    this->x(x);
-    this->y(y);
+Point::Point(const float x, const float y) : x(x), y(y) {
 }
 
 Point::Point(const Point &a) {
@@ -33,9 +31,10 @@ Point &Point::operator=(const Point &a) {
 Point::~Point() {}
 
 bool Point::bsp(const Point a, const Point b, const Point c, const Point point) {
-    float one = (a.x - point.x) * (b.y - a.y) - (b.x - a.x) * (a.y - point.y);
-    float two = (b.x - point.x) * (c.y - b.y) - (c.x - b.x) * (b.y - point.y);
-    float three = (c.x - point.x) * (a.y - c.y) - (a.x - c.x) * (c.y - point.y);
+    float one = (a.x.toFloat() - point.x.toFloat()) * (b.y.toFloat() - a.y.toFloat()) - (b.x.toFloat() - a.x.toFloat()) * (a.y.toFloat() - point.y.toFloat());
+    float two = (b.x.toFloat() - point.x.toFloat()) * (c.y.toFloat() - b.y.toFloat()) - (c.x.toFloat() - b.x.toFloat()) * (b.y.toFloat() - point.y.toFloat());
+    float three = (c.x.toFloat() - point.x.toFloat()) * (a.y.toFloat() - c.y.toFloat()) - (a.x.toFloat() - c.x.toFloat()) * (c.y.toFloat() - point.y.toFloat());
+    std::cout << one << std::endl << two << std::endl << three << std::endl;
     if ((one > 0 && two > 0 && three > 0) || (one < 0 && two < 0 && three <0))
         return (true);
     return (false);
