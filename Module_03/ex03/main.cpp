@@ -6,6 +6,7 @@
 
 int main(void) {
     DiamondTrap a("Marry");
+    a.showAll();
     a.attack("Jack");
     a.highFiveGuys();
     a.guardGate();

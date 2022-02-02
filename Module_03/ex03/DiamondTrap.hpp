@@ -19,6 +19,7 @@ public:
     ~DiamondTrap();
     void attack(const std::string& target);
     void whoAmI();
+    void showAll();
 };
 
 

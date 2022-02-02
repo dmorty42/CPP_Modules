@@ -4,7 +4,7 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : name("noname"), hp(10), mp(10), damage(0){
+ClapTrap::ClapTrap() : hp(10), mp(10), damage(0){
     std::cout << "ClapTrap default constructor called!"
               << std::endl;
 }

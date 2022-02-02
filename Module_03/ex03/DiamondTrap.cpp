@@ -59,3 +59,10 @@ void DiamondTrap::whoAmI() {
         << ". ClapTrap name is " << ClapTrap::name
         << std::endl;
 }
+
+void DiamondTrap::showAll() {
+    std::cout << "My name is " << this->name
+        << "! I have " << this->hp << " hit points, "
+        << this->mp << " energy points, " << this->damage
+        << " attack points!" << std::endl;
+}
