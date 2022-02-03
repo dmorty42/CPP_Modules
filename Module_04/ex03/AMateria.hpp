@@ -7,8 +7,7 @@
 
 #include "iostream"
 #include "string"
-
-class ICharacter;
+#include "ICharacter.hpp"
 
 class AMateria {
 protected:

@@ -10,12 +10,14 @@ Ice::Ice() {
               << std::endl;
 }
 
-Ice::Ice(std::string &type) : type(type) {
+Ice::Ice(std::string &type) {
+    this->type = type;
     std::cout << "Ice constructor called with parameter Type!"
               << std::endl;
 }
 
-Ice::Ice(const Ice &a) : type(a.type) {
+Ice::Ice(const Ice &a) {
+    this->type = a.getType();
     std::cout << "Ice copy constructor called!"
               << std::endl;
 }
@@ -24,6 +26,7 @@ Ice &Ice::operator=(const Ice &a) {
     this->type = a.type;
     std::cout << "Ice assigment operator called!"
               << std::endl;
+    return (*this);
 }
 
 Ice::~Ice() {

@@ -23,6 +23,7 @@ AMateria &AMateria::operator=(const AMateria &a) {
     this->type = a.type;
     std::cout << "AMateria assigment operator called!"
               << std::endl;
+    return (*this);
 }
 
 AMateria::~AMateria() {
@@ -36,5 +37,5 @@ const std::string &AMateria::getType() const {
 
 void AMateria::use(ICharacter &target) {
     std::cout << "Target " << target.getName()
-        << " with " << name << std::endl;
+        << " with " << type << std::endl;
 }
