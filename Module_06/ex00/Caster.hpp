@@ -7,9 +7,11 @@
 
 #include "iostream"
 #include "string"
+#include "limits"
 
 enum types{
-    INVALID,
+    NONE,
+    SPECIAL,
     CHAR,
     INT,
     FLOAT,
@@ -21,15 +23,24 @@ private:
     std::string value;
     int type;
     char c;
-    int i;
-    float f;
-    double d;
+    double num;
 public:
     Caster(std::string value);
     Caster(const Caster &a);
     Caster& operator=(const Caster& a);
     ~Caster();
     int findType() const;
+    bool isChar() const;
+    bool isInt() const;
+    bool isFloat() const;
+    bool isDouble() const;
+    bool isSpecial() const;
+    bool isFloatSpec() const;
+    void printChar() const;
+    void printInt() const;
+    void printFloat() const;
+    void printDouble();
+    void printSpecial() const;
 };
 
 
