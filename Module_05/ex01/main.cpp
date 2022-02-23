@@ -6,7 +6,10 @@
 
 int main()
 {
-    Bureaucrat a("first", 100);
-    Form    b("bob", 100, 10);
-    b.beSigned(a);
+    Bureaucrat a("bob", 101);
+    Form    b("first", 100, 10);
+//    b.beSigned(a);
+    a.signForm(b);
+    ++a;
+    a.signForm(b);
 }
